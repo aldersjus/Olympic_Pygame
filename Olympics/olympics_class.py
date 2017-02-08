@@ -6,7 +6,7 @@ pygame.init()
 black = [0, 0, 0]
 white = [255, 255, 255]
 green = [0, 255, 0]
-brown = [128, 64, 0]#128, 64,0
+brown = [128, 64, 0]
 
 screen_width = 600
 screen_height = 900
@@ -22,7 +22,7 @@ timer = 10
 
 
 def count_down(count):
-    if count < 2:# or count == 1 or count == 0:  
+    if count < 2:
         go = font.render("GO", 1, black)
         screen.blit(go, (400, 50))
         screen.blit(go, (200, 50))
@@ -154,7 +154,7 @@ while not done:
             done = True
 
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT:#Use lower case letters to asign a key.
+            if event.key == pygame.K_LEFT:
                 boy.left()
             elif event.key == pygame.K_RIGHT:
                 boy.right()
@@ -163,7 +163,7 @@ while not done:
             elif event.key == pygame.K_c:
                 girl.right()
 
-    #As usual be careful with the order you call functions.
+  
     field()
     boy.draw(screen)
     boy.position_one()
@@ -189,7 +189,7 @@ while not done:
     if game_over == True:
         screen.fill(black)
         screen.blit(text4,[120, screen_height / 2])
-    if timer >= 1:# It should go past this to zero, if set to 0 will go to minus one.
+    if timer >= 1:
         timer = count_down(timer)
     
     display("Ready Steady:" + str(timer))
